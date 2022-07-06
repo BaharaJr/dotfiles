@@ -1,0 +1,22 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+# Shell extension to jump to frequently used directories
+brew "autojump"
+# Distributed revision control system
+brew "git"
+# Extensions to follow Vincent Driessen's branching model
+brew "git-flow"
+# Improved top (interactive process viewer)
+brew "htop"
+# Java-based project management
+brew "maven"
+# Pretty, minimal and fast ZSH prompt
+brew "pure"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# Android SDK component
+cask "android-platform-tools"
+# Rust-based terminal
+cask "warp"
