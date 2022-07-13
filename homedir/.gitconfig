@@ -1,6 +1,6 @@
 [user]
   name = Bennett Benedict
-  email =  41388684+BaharaJr@users.noreply.github.com
+  email =  bennybenester@gmail.com
 	signingkey = F4A44A60968FB4B6
 [github]
   # https://github.com/blog/180-local-github-config
@@ -205,3 +205,5 @@
 	rebase = true
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg

@@ -1,21 +1,23 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
-PROMPT="%F{cyan}%n %1~ %# %f"
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 # POWERLEVEL9K_MODE='awesome-patched'
-export ZSH_THEME="powerlevel9k/powerlevel9k"
-#export ZSH_THEME="3den"
+# export ZSH_THEME="powerlevel9k/powerlevel9k"
+export ZSH_THEME="agnoster"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 # https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
 # https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir nvm vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir nvm vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
 # colorcode test
 # for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
 POWERLEVEL9K_NVM_FOREGROUND='000'
 POWERLEVEL9K_NVM_BACKGROUND='072'
 POWERLEVEL9K_SHOW_CHANGESET=true
-export ZSH_THEME="random"
+#export ZSH_THEME="random"
+
+# GPG SIGN
+export GPG_TTY=$(tty)
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="false"
@@ -31,9 +33,9 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colorize compleat dirpersist autojump git gulp history cp mac-zsh-completions)
+plugins=(colorize compleat dirpersist autojump git gulp history cp)
 
-#source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 source ~/.nvm/nvm.sh --no-use
 
@@ -66,3 +68,11 @@ alias udsm="sh ~/servers/udsm-local.sh"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+prompt_context() {
+  # Custom (Random emoji)
+  # emojis=("⚡️" "🔥" "💀" "👑" "😎" "🐸" "🐵" "🦄" "🍻" "🚀" "💡" "🎉" "🔑" "🇹🇭" "🚦" "🌙")
+  emojis=("⚡️" "🔥" "🦄" "🍻" "🚀")
+  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1 ))
+  prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
+}
