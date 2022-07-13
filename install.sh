@@ -1198,4 +1198,10 @@ done
 
 brew update && brew upgrade && brew cleanup
 
+
+##Set up VIM
+
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
 bot "Woot! All done"
