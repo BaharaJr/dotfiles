@@ -1,5 +1,10 @@
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.dotfiles/oh-my-zsh
+
+#Brew Path
+
+export PATH=$PATH:/opt/homebrew/bin
+
 # if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
 # POWERLEVEL9K_MODE='awesome-patched'
 # export ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -60,6 +65,8 @@ source /Users/bennett/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export NVM_DIR=~/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
   [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+#Flutter Path
 export PATH=~/flutter/bin:$PATH
 #Custom aliases
 alias flexservers="sh ~/servers/flexcode.sh"
